@@ -20,6 +20,7 @@ public class ejer11 {
 		result = (letra.equals("A")) ? "CORRECTO" : "INCORRECTO";
 		System.out.println(result + " primera letra " + letra);
 
+		
 	}
 
 }

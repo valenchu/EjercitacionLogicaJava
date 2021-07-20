@@ -29,8 +29,8 @@ public class mainEjecutor {
 //		ejer25.ejer25();
 //		ejer26.ejer26();
 //		ejer27.ejer27();
-		ejer28.ejer28();
-//		pruebaColor.llamarColor();
+//		ejer28.ejer28();
+		pruebaColor.llamarColor();
 
 	}
 
