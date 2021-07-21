@@ -10,7 +10,10 @@ public class Ejecutor {
 //		l1.ejecutor2();
 		// llamo ejercicio 3
 //		l1.ejecutor3();
-		l1.ejecutor4();
+//		l1.ejecutor4();
+//		l1.ejecutor5();
+//		l1.ejecutor6();
+		l1.ejecutor7();
 	}
 
 }
