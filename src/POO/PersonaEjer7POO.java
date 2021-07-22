@@ -89,9 +89,9 @@ public class PersonaEjer7POO {
 				System.out.println("Dato sexo incorrecto recuerde ingresar H = Hombre,M = Mujer, O = Otro ");
 			}
 		} while (prueba == false);
-		System.out.println("Ingrese el peso");
+		System.out.println("Ingrese el peso(EJEMPLO 75,5)");
 		this.peso = sn.nextDouble();
-		System.out.println("Ingrese la altura");
+		System.out.println("Ingrese la altura(EJEMPLO 1,75)");
 		this.altura = sn.nextDouble();
 	}
 }

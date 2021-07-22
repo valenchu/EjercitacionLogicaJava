@@ -110,40 +110,15 @@ public class LlamadoEjercicio {
 //		que el usuario no saque más del 20%.
 //		• Método consultarSaldo(): permitirá consultar el saldo disponible en la cuenta.
 //		• Método consultarDatos(): permitirá mostrar todos los datos de la cuenta
-		CuentaBancariaEjer5POO c1 = new CuentaBancariaEjer5POO();
-		// Cargo datos en variables
-		System.out.println("LLENADO DE DATOS DE CUENTA BANCARIA");
-		System.out.println("Ingrese su numero de cuenta");
-		int numC = sn.nextInt();
-		System.out.println("Ingrese su DNI");
-		long dni = sn.nextLong();
-		System.out.println("Ingrese el su saldo");
-		long sald = sn.nextLong();
-		// Lleno con las variables cargadas el objeto de cuenta c1
-		c1.llenarCuenta(numC, dni, sald);
-		// Muestro los datos de la cuenta bancaria
-		c1.consultarDatos();
-		// Sumo saldo
-		System.out.println("//////////////////////////////////////////");
-		System.out.println("¿Cuanto saldo quiere sumar a su cuenta?");
-		sald = sn.nextLong();
-		c1.ingresar(sald);
-		// Muestro los datos de la cuenta bancaria
-		c1.consultarDatos();
-		// Retiro saldo
-		System.out.println("//////////////////////////////////////////");
-		System.out.println("¿Cuanto saldo quiere retirar de su cuenta?");
-		sald = sn.nextLong();
-		c1.retirar(sald);
-		// Hago extraccion rápida del saldo un 20%
-		System.out.println("//////////////////////////////////////////");
-		System.out.println("Puede retirar un maximo de 20% del saldo de su cuenta");
-		System.out.println("Ingrese el monto a retirar");
+		CuentaBancariaEjer5POO cuenta1 = new CuentaBancariaEjer5POO();
+		int comando;
+		do {
+			cuenta1.menu();
+			System.out.println("Ingrese su accion de menu");
+			comando = sn.nextInt();
+			cuenta1.acciones(comando);
 
-		sald = sn.nextLong();
-		c1.extraccionRapida(sald);
-		c1.consultarDatos();
-
+		} while (comando != 0);
 	}
 
 	public void ejecutor6() {

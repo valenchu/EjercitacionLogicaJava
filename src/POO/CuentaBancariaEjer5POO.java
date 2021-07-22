@@ -1,6 +1,7 @@
 package POO;
 
 import java.math.BigInteger;
+import java.util.Scanner;
 
 public class CuentaBancariaEjer5POO {
 	// Atributo
@@ -117,6 +118,104 @@ public class CuentaBancariaEjer5POO {
 			System.out.println("Se retiraron un total de $" + retiroRap + " de su cuenta bancaria");
 		}
 		consultarSaldo();
+	}
+
+	// Menu
+	public void menu() {
+		System.out.println("///////////////////////////////////////////");
+		System.out.println("CUENTA BANCARIA");
+		System.out.println("MENU");
+		System.out.println("1- Ingresar datos cuenta bancaria");
+		System.out.println("2- Consultar datos cuenta bancaria");
+		System.out.println("3- Consultar saldo cuenta bancaria");
+		System.out.println("4- Sumar saldo a cuenta bancaria");
+		System.out.println("5- Retirar saldo cuenta bancaria");
+		System.out.println("6- Extraccion rapida de cuenta bancaria maximo un 20% de su saldo");
+		System.out.println("0- Para salir");
+		System.out.println("///////////////////////////////////////////");
+	}
+
+	// Opciones del menu
+	public void acciones(int accion) {
+		Scanner sn = new Scanner(System.in);
+		int numC = 0;
+		long dni = 0L, sald = 0L;
+		System.out.println("///////////////////////////////////////////");
+		switch (accion) {
+		case 1:
+			// Cargo datos en variables de la cuenta bancaria
+			System.out.println("LLENADO DE DATOS DE CUENTA BANCARIA");
+			System.out.println("Ingrese su numero de cuenta");
+			numC = sn.nextInt();
+			System.out.println("Ingrese su DNI");
+			dni = sn.nextLong();
+			System.out.println("Ingrese el su saldo");
+			sald = sn.nextLong();
+			// Lleno con las variables cargadas el objeto de cuenta c1
+			llenarCuenta(numC, dni, sald);
+			break;
+		case 2:
+			if (this.clienteDNI.equals(0L) && this.numeroCuenta.equals(0) && this.saldo.equals(0L)) {
+				System.out.println("DEBE INGRESAR DATOS EN LA CUENTA SELECCIONE OPCION 1");
+			} else {
+				System.out.println("---CONSULTANDO DATOS DE LA CUENTA---");
+				// Muestro los datos de la cuenta bancaria
+				consultarDatos();
+			}
+			break;
+
+		case 3:
+			if (this.clienteDNI.equals(0L) && this.numeroCuenta.equals(0) && this.saldo.equals(0L)) {
+				System.out.println("DEBE INGRESAR DATOS EN LA CUENTA SELECCIONE OPCION 1");
+			} else {
+				// CONSULTO SALDO DE LA CUENTA
+				System.out.println("---CONSULTANDO SALDO DE LA CUENTA---");
+				consultarSaldo();
+			}
+			break;
+		case 4:
+			if (this.clienteDNI.equals(0L) && this.numeroCuenta.equals(0) && this.saldo.equals(0L)) {
+				System.out.println("DEBE INGRESAR DATOS EN LA CUENTA SELECCIONE OPCION 1");
+			} else {
+				// Sumo saldo a la cuenta
+				System.out.println("---AGREGANDO SALDO A LA CUENTA---");
+				System.out.println("¿Cuanto saldo quiere sumar a su cuenta?");
+				sald = sn.nextLong();
+				ingresar(sald);
+			}
+			break;
+		case 5:
+			if (this.clienteDNI.equals(0L) && this.numeroCuenta.equals(0) && this.saldo.equals(0L)) {
+				System.out.println("DEBE INGRESAR DATOS EN LA CUENTA SELECCIONE OPCION 1");
+			} else {
+				// Retiro saldo a la cuenta
+				System.out.println("---RETIRANDO SALDO A LA CUENTA---");
+				System.out.println("¿Cuanto saldo quiere retirar de su cuenta?");
+				sald = sn.nextLong();
+				retirar(sald);
+			}
+			break;
+		case 6:
+			if (this.clienteDNI.equals(0L) && this.numeroCuenta.equals(0) && this.saldo.equals(0L)) {
+				System.out.println("DEBE INGRESAR DATOS EN LA CUENTA SELECCIONE OPCION 1");
+			} else {
+				// Hago extraccion rápida del saldo un 20%
+				System.out.println("---EXTRACCION RAPIDA DE LA CUENTA---");
+				System.out.println("Puede retirar un maximo de 20% del saldo de su cuenta");
+				System.out.println("Ingrese el monto a retirar");
+				sald = sn.nextLong();
+				extraccionRapida(sald);
+			}
+			break;
+		case 0:
+			System.out.println("---SALIENDO DE CUENTA BANCARIA---");
+			break;
+
+		default:
+			System.out.println("Numero incorrecto, intentelo de nuevo");
+			break;
+		}
+
 	}
 
 }
