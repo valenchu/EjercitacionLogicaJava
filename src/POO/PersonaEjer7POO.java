@@ -1,6 +1,7 @@
 package POO;
 
 import java.util.Scanner;
+import java.util.concurrent.ExecutionException;
 
 public class PersonaEjer7POO {
 	// Atributos
@@ -67,18 +68,23 @@ public class PersonaEjer7POO {
 	// Metodos varios
 	public void crearPersona() {
 		Scanner sn = new Scanner(System.in);
+		boolean prueba = false;
 		System.out.println("---CREANDO PERSONA---");
 		System.out.println("Ingrese nombre");
 		this.nombre = sn.nextLine();
-		try {
-			System.out.println("Ingrese edad");
-			this.edad = sn.nextInt();
-		} catch (Exception e) {
-			System.out.println("No ingreso un numero " + e);
-			sn.next();
-			sn.nextLine();
-		}
-		boolean prueba = false;
+		// Verifico edad mayor que cero y con el catch q no mande letras
+		do {
+			try {
+				System.out.println("Ingrese edad");
+				this.edad = sn.nextInt();
+				prueba = (this.edad < 0) ? false : true;
+			} catch (Exception e) {
+				System.out.println("No ingreso un numero " + e);
+				sn.next();
+				sn.nextLine();
+			}
+		} while (prueba == false);
+		// Verifico que ingrese bien el sexyo
 		do {
 			System.out.println("Ingrese su sexo (H = Hombre,M = Mujer, O = Otro)");
 			this.sexo = sn.next();
@@ -89,9 +95,50 @@ public class PersonaEjer7POO {
 				System.out.println("Dato sexo incorrecto recuerde ingresar H = Hombre,M = Mujer, O = Otro ");
 			}
 		} while (prueba == false);
-		System.out.println("Ingrese el peso(EJEMPLO 75,5)");
-		this.peso = sn.nextDouble();
-		System.out.println("Ingrese la altura(EJEMPLO 1,75)");
-		this.altura = sn.nextDouble();
+		// Verifico tanto que el peso y altura sean mayor a 0
+		// Y verifico que ingrese numeros
+		do {
+			try {
+				System.out.println("Ingrese el peso(EJEMPLO 75,5)");
+				this.peso = sn.nextDouble();
+				System.out.println("Ingrese la altura(EJEMPLO 1,75)");
+				this.altura = sn.nextDouble();
+				if (this.peso < 0) {
+					prueba = false;
+					System.out.println("Peso incorrecto debe ser mayor a 0 ");
+				} else if (this.altura < 0) {
+					prueba = false;
+					System.out.println("Altura incorrecta debe ser mayor a 0 ");
+				} else {
+					prueba = true;
+				}
+			} catch (Exception e) {
+				System.out.println("Datos ERRONEOS intentelo de nuevo " + e);
+				sn.next();
+				sn.nextLine();
+			}
+		} while (prueba == false);
+	}
+
+	// Metodo que calcula el IMC de la persona
+	public Integer calcularIMC() {
+		final int debajoPeso = -1;
+		final int normalPeso = 0;
+		final int sobrePeso = 1;
+		double calculo = this.peso / (this.altura * this.altura);
+		if ((calculo > 0) && (calculo < 20)) {
+			return debajoPeso;
+		} else if ((calculo > 20) && (calculo < 25)) {
+			return normalPeso;
+		} else {
+			return sobrePeso;
+		}
+	}
+
+	public boolean esMayorDeEdad() {
+		boolean result = false;
+		int eda = this.edad;
+		result = (eda >= 18)?true:false;
+		return result;
 	}
 }

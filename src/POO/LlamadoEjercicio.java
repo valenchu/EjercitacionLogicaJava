@@ -180,8 +180,59 @@ public class LlamadoEjercicio {
 //		personas cuantas están por debajo de su peso, cuantas en su peso ideal y cuantos, por
 //		encima, y también calcularemos un porcentaje de cuantos son mayores de edad y
 //		cuantos menores.
-		PersonaEjer7POO p1 = new PersonaEjer7POO();
-		p1.crearPersona();
+		PersonaEjer7POO p1 = new PersonaEjer7POO("Valentin", 28, "H", 80, 1.80);
+		PersonaEjer7POO p2 = new PersonaEjer7POO("Homero", 25, "H", 75, 1.70);
+		PersonaEjer7POO p3 = new PersonaEjer7POO("Yesica", 28, "M", 66, 1.66);
+		PersonaEjer7POO p4 = new PersonaEjer7POO("Ayaka", 15, "M", 55, 1.60);
+		// Creo un objeto con 4 personas
+		PersonaEjer7POO[] pesona = { p1, p2, p3, p4 };
+		// Variables contadoras para sacar porcentajes
+		int contadorPesoNormal = 0, contadorMenorPeso = 0, contadorSobrePeso = 0, mayor = 0, menor = 0;
+		// Descomentar esta parte para crear 4 personas a gusto, tamb puede modificar
+		// constructores arriba
+//		for(int i = 0; i< pesona.length; i++){
+//			pesona[i].crearPersona();;
+//			
+//		}
+		// Recorro el objeto y voy tirando datos de cada uno
+		for (int i = 0; i < pesona.length; i++) {
+			System.out.println("/////////////////");
+			if (pesona[i].calcularIMC().equals(-1)) {
+				System.out.println(pesona[i].getNombre() + " Esta con peso MENOR AL NORMAL");
+				contadorMenorPeso++;
+			} else if (pesona[i].calcularIMC().equals(0)) {
+				System.out.println(pesona[i].getNombre() + " Esta con peso NORMAL");
+				contadorPesoNormal++;
+			} else {
+				System.out.println(pesona[i].getNombre() + " Esta con SOBRE PESO");
+				contadorSobrePeso++;
+			}
+			if (pesona[i].esMayorDeEdad() == true) {
+				System.out.println(pesona[i].getNombre() + " Es MAYOR de edad");
+				mayor++;
+			} else {
+				System.out.println(pesona[i].getNombre() + " Es MENOR de edad");
+				menor++;
+			}
+		}
+		// Calculo los porcentajes de peso y de edad entorno a las 4 personas
+		System.out.println("/////////////////");
+		// Variables que guardan porcentajes
+		// ma indica mayores de edad ,me indica menores de edad
+		int normal, sobrepeso, menospeso, ma, me;
+		normal = (int) (contadorPesoNormal * 100) / 4;
+		sobrepeso = (int) (contadorSobrePeso * 100) / 4;
+		menospeso = (int) (contadorMenorPeso * 100) / 4;
+		ma = (int) (mayor * 100) / 4;
+		me = (int) (menor * 100) / 4;
+		int[] peso = { normal, sobrepeso, menospeso };
+		String[] dato = { "NORMAL", "SOBRE PESO", "MENOR AL NORMAL" };
+		for (int i = 0; i < peso.length; i++) {
+			System.out.println("El %" + peso[i] + " de estas 4 personas tiene un peso " + dato[i]);
+		}
+		System.out.println("/////////////////");
+		System.out.println("El %" + ma + " de estas 4 personas es MAYOR");
+		System.out.println("El %" + me + " de estas 4 personas es MENOR");
 	}
 
 }
