@@ -93,10 +93,11 @@ public class CafeteraEjer6POO {
 		System.out.println("Capacidad MAXIMA " + getCapacidadMaxima() + " mililitros");
 		System.out.println("Capacidad ACTUAL " + getCantidadActual() + " mililitros");
 		System.out.println("MENU");
-		System.out.println("1- Para llenar cafetera");
-		System.out.println("2- Para servir taza");
-		System.out.println("3- Para vaciar cafetera");
-		System.out.println("4- Para agregar cafe a la cafetera");
+		System.out.println("1- Establecer capacidades CAFETERA");
+		System.out.println("2- Para llenar cafetera");
+		System.out.println("3- Para servir taza");
+		System.out.println("4- Para vaciar cafetera");
+		System.out.println("5- Para agregar cafe a la cafetera");
 		System.out.println("0- Para salir");
 		System.out.println("///////////////////////////////////////////");
 	}
@@ -107,26 +108,50 @@ public class CafeteraEjer6POO {
 		System.out.println("///////////////////////////////////////////");
 		switch (accion) {
 		case 1:
-			System.out.println("---LLENANDO CAFETERA AL 100%---");
-			llenarCafetera();
+			System.out.println("---ESTABLECIENDO CAPACIDADES---");
+			System.out.println("Ingrese capacidad maxima cafetera");
+			this.capacidadMaxima = sn.nextInt();
+			System.out.println("Ingrese cantidad actual de litros en cafetera");
+			this.cantidadActual = sn.nextInt();
 			break;
 		case 2:
-			System.out.println("Ingrese el tamaño de la taza vacia");
-			int tam = sn.nextInt();
-			servirTaza(tam);
+			if (this.capacidadMaxima == 0) {
+				System.out.println("Capacidad maxima no instanciado use Opcion 1");
+			} else {
+				System.out.println("---LLENANDO CAFETERA AL 100%---");
+				llenarCafetera();
+			}
 			break;
 		case 3:
-			System.out.println("---VACIANDO LA CAFETERA---");
-			vaciarCafetera();
-			System.out.println("---CAFETERA AL 0%---");
+			if (this.capacidadMaxima == 0 || this.cantidadActual == 0) {
+				System.out.println(
+						"Capacidad maxima no instanciado o cafetera sin cafe use Opcion 1 o opcion 2 o 5 para llenar cafetera");
+			} else {
+				System.out.println("Ingrese el tamaño de la taza vacia");
+				int tam = sn.nextInt();
+				servirTaza(tam);
+			}
 			break;
 		case 4:
-			System.out.println("---CARGANDO CAFETERA---");
-			System.out
-					.println("Ingrese la capacidad a cargar en la cafetera.\nLa cafetera tiene una capacidad actal de "
-							+ getCantidadActual());
-			int carga = sn.nextInt();
-			agregarCafe(carga);
+			if (this.capacidadMaxima == 0) {
+				System.out.println("Capacidad maxima no instanciado use Opcion 1");
+			} else {
+				System.out.println("---VACIANDO LA CAFETERA---");
+				vaciarCafetera();
+				System.out.println("---CAFETERA AL 0%---");
+			}
+			break;
+		case 5:
+			if (this.capacidadMaxima == 0) {
+				System.out.println("Capacidad maxima no instanciado use Opcion 1");
+			} else {
+				System.out.println("---CARGANDO CAFETERA---");
+				System.out.println(
+						"Ingrese la capacidad a cargar en la cafetera.\nLa cafetera tiene una capacidad actal de "
+								+ getCantidadActual());
+				int carga = sn.nextInt();
+				agregarCafe(carga);
+			}
 			break;
 		case 0:
 			System.out.println("---SALIENDO DE CAFETERA---");
