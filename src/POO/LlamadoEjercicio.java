@@ -271,16 +271,16 @@ public class LlamadoEjercicio {
 		// Envio al objeto para llenar los atributos
 		cadena.setFrase(frase);
 		cadena.setLongitud(longitud);
-//		cadena.mostrarVocales();
-//		cadena.invertirFrase();
+
+		int comando;
 		do {
-			System.out.println("Ingrese una letra para ver cuantas veces se repite en la frase");
-			letra = sn.nextLine();
-			p = cadena.vecesRepetido(letra);
-			if(p == false) {
-				System.out.println("Ingreso mas de 1 caracter");
-			}
-		} while (p != true);
+			cadena.menu();
+			System.out.println("--------------||||--------------");
+			System.out.println("Ingrese su accion de MENU");
+			comando = sn.nextInt();
+			cadena.accionesMenu(comando);
+
+		} while (comando != 0);
 	}
 
 }
