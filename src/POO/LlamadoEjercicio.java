@@ -1,5 +1,6 @@
 package POO;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class LlamadoEjercicio {
@@ -281,6 +282,98 @@ public class LlamadoEjercicio {
 			cadena.accionesMenu(comando);
 
 		} while (comando != 0);
+	}
+
+	public void ejecutor9() {
+//		Realizar una clase llamada Matemática que tenga como atributos dos números reales
+//		con los cuales se realizarán diferentes operaciones matemáticas. La clase deber tener
+//		un constructor vacío, parametrizado y get y set. En el main se creará el objeto y se
+//		usará el Math.random para generar los dos números y se guardaran en el objeto con
+//		su respectivos set. Deberá además implementar los siguientes métodos:
+//		• Método devolverMayor() para retornar cuál de los dos atributos tiene el mayor
+//		valor
+//		20
+//		• Método calcularPotencia() para calcular la potencia del mayor valor de la clase
+//		elevado al menor número. Previamente se deben redondear ambos valores.
+//		• Método calculaRaiz(), para calcular la raíz cuadrada del menor de los dos valores.
+//		Antes de calcular la raíz cuadrada se debe obtener el valor absoluto del número.
+
+		// Intancio los numeros y los paso por el constructor lleno a la clase
+		int numero = (int) ((Math.random() * 100));
+		int numero2 = (int) ((Math.random() * 100));
+		// Paso numeros por parametros del constructor a la clase!
+		MatemáticaEjer9POO cal = new MatemáticaEjer9POO(numero, numero2);
+		// Muestro valores random
+		System.out.println(cal.getNum1() + " --- " + cal.getNum2());
+		// Muestro numero mayor
+		System.out.println("Muestro numero mayor = " + cal.devolverMayor());
+		// Muestro mayor elevado a la potencia del menor
+		System.out.println("Muestro la potencia = " + cal.calcularPotencia());
+		// Muestro la raiz cuadrada del numero menor
+		System.out.println("Raiz cuadrada del menor = " + cal.calculaRaiz());
+	}
+
+	public void ejecutor10() {
+		// Creo objeto
+		DosArreglosEjer10POO ar1 = new DosArreglosEjer10POO();
+		// intancio arreglo A del objeto y lo muestro
+		ar1.llenarArregloA();
+		// Ordeno y muestro arreglo A
+		ar1.ordenarMenorMayor();
+		ar1.copiarDiezPrimerosNumeros();
+
+	}
+
+	public void ejecutor11() {
+//		Pongamos de lado un momento el concepto de POO, ahora vamos a trabajar solo con
+//		la clase Date. En este ejercicio deberemos instanciar en el main, una fecha usando la
+//		clase Date, para esto vamos a tener que crear 3 variables, dia, mes y anio que se le
+//		pedirán al usuario para poner el constructor del objeto Date. Una vez creada la fecha
+//		de tipo Date, deberemos mostrarla y mostrar cuantos años hay entre esa fecha y la
+//		fecha actual, que se puede conseguir instanciando un objeto Date con constructor
+//		vacío. 
+
+//		Ejemplo fecha: Date fecha = new Date(anio, mes, dia);
+//		Ejemplo fecha actual: Date fechaActual = new Date(); 
+//		Si necesiten acá tienen más información en clase Date: Documentación Oracle
+		boolean verificador = false, verificadorD = false, verificadorM = false, verficadorAno = false;
+		int m = 0, a = 0, d = 0;
+		do {
+			System.out.println("INSTANCIANDO FECHA");
+			System.out.println("--------------------------------------------------");
+			System.out.println("Ingrese día");
+			d = sn.nextInt();
+			verificadorD = (d > 31 || d < 1) ? false : true;
+			System.out.println("Ingrese mes");
+			m = sn.nextInt();
+			if ((m == 2) && (d < 29 && d >= 1)) {
+				verificadorM = true;
+			} else if ((m == 1 || m == 3 || m == 5 || m == 7 || m == 8 || m == 10 || m == 12) && (d >= 1 && d < 32)) {
+				verificadorM = true;
+
+			} else if ((m == 4 || m == 6 || m == 9 || m == 11) && (d >= 1 && d < 31)) {
+				verificadorM = true;
+			} else {
+				System.out.println("Algo en el mes o día escribio mal");
+				verificadorM = false;
+			}
+			System.out.println("Ingrese año");
+			a = sn.nextInt();
+			if (a > 100) {
+				verficadorAno = true;
+			} else {
+				System.out.println("Escribio un año negativo");
+			}
+			if (verificadorD == true && verificadorM == true && verficadorAno == true) {
+				verificador = true;
+			} else {
+				System.out.println("Algo hizo mal intentelo de nuevo");
+				verificador = false;
+			}
+		} while (verificador == false);
+		FechasEjer10POO fe = new FechasEjer10POO(d, m, a);
+		System.out.println(fe.toString());
+		fe.anosEntreFechas();
 	}
 
 }
