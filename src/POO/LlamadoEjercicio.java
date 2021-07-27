@@ -371,9 +371,21 @@ public class LlamadoEjercicio {
 				verificador = false;
 			}
 		} while (verificador == false);
-		FechasEjer10POO fe = new FechasEjer10POO(d, m, a);
+		FechasEjer11POO fe = new FechasEjer11POO(d, m, a);
 		System.out.println(fe.toString());
 		fe.anosEntreFechas();
+	}
+
+	public void ejecutor12() {
+		PersonaEjer12POO p1 = new PersonaEjer12POO();
+		p1.crearPersona();
+		int ac = -1;
+		do {
+			p1.menu();
+			System.out.println("Ingrese accion de menu");
+			ac = sn.nextInt();
+			p1.accionMenu(ac);
+		} while (ac != 0);
 	}
 
 }
