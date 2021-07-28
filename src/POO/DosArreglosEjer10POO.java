@@ -55,18 +55,28 @@ public class DosArreglosEjer10POO {
 		System.out.println(Arrays.toString(this.arregloA));
 	}
 
+	// Metodo copiado a la antigua escuela
 	public void copiarDiezPrimerosNumeros() {
-		for(int i = 0; i<this.arregloB.length; i++) {
-			if(i >=  0 && i <= 9) {
+		for (int i = 0; i < this.arregloB.length; i++) {
+			if (i >= 0 && i <= 9) {
 				this.arregloB[i] = this.arregloA[i];
-			}else {
+			} else {
 				this.arregloB[i] = 0.5;
 			}
-			
+
 		}
 		System.out.println("---------ARRAY B---------");
 		System.out.println(Arrays.toString(this.arregloB));
-		
+
+	}
+
+	// Metodo copiado actual
+	public void copiar() {
+		//
+		this.arregloB = Arrays.copyOf(this.arregloA, 20);
+		Arrays.fill(this.arregloB, 10, 20, 0.5);
+		System.out.println("---------ARRAY B COPIADO V2---------");
+		System.out.println(Arrays.toString(this.arregloB));
 	}
 
 }

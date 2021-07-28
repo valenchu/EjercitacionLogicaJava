@@ -321,6 +321,7 @@ public class LlamadoEjercicio {
 		// Ordeno y muestro arreglo A
 		ar1.ordenarMenorMayor();
 		ar1.copiarDiezPrimerosNumeros();
+		ar1.copiar();
 
 	}
 
