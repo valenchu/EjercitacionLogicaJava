@@ -122,23 +122,23 @@ public class PersonaEjer7POO {
 
 	// Metodo que calcula el IMC de la persona
 	public Integer calcularIMC() {
-		final int debajoPeso = -1;
-		final int normalPeso = 0;
-		final int sobrePeso = 1;
+		final int DEBAJO_PESO = -1;
+		final int NORMAL_PESO = 0;
+		final int SOBRE_PESO = 1;
 		double calculo = this.peso / (this.altura * this.altura);
 		if ((calculo > 0) && (calculo < 20)) {
-			return debajoPeso;
+			return DEBAJO_PESO;
 		} else if ((calculo > 20) && (calculo < 25)) {
-			return normalPeso;
+			return NORMAL_PESO;
 		} else {
-			return sobrePeso;
+			return SOBRE_PESO;
 		}
 	}
 
 	public boolean esMayorDeEdad() {
 		boolean result = false;
 		int eda = this.edad;
-		result = (eda >= 18)?true:false;
+		result = (eda >= 18) ? true : false;
 		return result;
 	}
 }
