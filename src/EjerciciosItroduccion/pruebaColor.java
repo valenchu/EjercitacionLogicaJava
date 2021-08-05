@@ -7,8 +7,14 @@ import java.util.Scanner;
 import java.util.stream.IntStream;
 
 public class pruebaColor {
+	static double[] arf = new double[] {1,2,3,4,5,6,7};
+	public static double[] clasedo() {
+		return arf;
+	}
 
 	public static void llamarColor() {
+		
+		System.out.println(Arrays.toString(clasedo()));
 		double a = 1.2;
 		String letra = "E";
 		System.out.println("letra antes del valueOf " + letra);
@@ -35,24 +41,7 @@ public class pruebaColor {
 
 			}
 		}
-		System.out.println("");
 		
-		System.out.println("Matriz generada");
-		for (i = 0; i < 4; i++) {
-			for (j = 0; j < 4; j++) {// lo mostramos
-				System.out.print(" [ " + matriz[i][j] + " ] ");
-			}
-			System.out.println("");
-		}
-		
-		System.out.println("Matriz traspuesta");
-
-		for (i = 0; i < 4; i++) {
-			for (j = 0; j < 4; j++) {// lo mostramos
-				System.out.print(" [ " + matriz[j][i] + " ] ");
-			}
-			System.out.println("");
-		}
 
 	}
 
