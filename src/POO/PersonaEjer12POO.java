@@ -64,7 +64,7 @@ public class PersonaEjer12POO {
 			System.out.println("Ingrese el AÑO de su fecha de nacimiento");
 			a = sn.nextInt();
 			try {
-
+				
 				// Paso la fecha a strin
 				fecha = d + "/" + m + "/" + a;
 				// utilizo el string y lo parseo con datetimeformat creado como estatico al
@@ -149,6 +149,7 @@ public class PersonaEjer12POO {
 				try {
 					// Paso la fecha a strin
 					fecha = d + "/" + m + "/" + a;
+					
 					// utilizo el string y lo parseo con datetimeformat creado como estatico al
 					// comienzo de la clase
 					LocalDate f = LocalDate.parse(fecha, toEurope);
