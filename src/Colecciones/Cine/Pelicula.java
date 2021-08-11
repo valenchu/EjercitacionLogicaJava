@@ -4,10 +4,10 @@ public class Pelicula {
 	// Articulo
 	private String titulo;
 	private String director;
-	private int duracionMin;
+	private Integer duracionMin;
 
 	// Constructor lleno vacio
-	public Pelicula(String titulo, String director, int duracionMin) {
+	public Pelicula(String titulo, String director, Integer duracionMin) {
 		this.titulo = titulo;
 		this.director = director;
 		this.duracionMin = duracionMin;
@@ -33,12 +33,12 @@ public class Pelicula {
 		this.director = director;
 	}
 
-	public int getDuracionMin() {
+	public Integer getDuracionMin() {
 		return duracionMin;
 	}
 
-	public void setDuracionMin(int duracionMin) {
+	public void setDuracionMin(Integer duracionMin) {
 		this.duracionMin = duracionMin;
 	}
-	
+
 }

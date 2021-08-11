@@ -30,8 +30,8 @@ public class ServicioPelicula {
 
 		@Override
 		public int compare(Pelicula o1, Pelicula o2) {// comparo los dos objetos
-			String hora1 = String.valueOf(o1.getDuracionMin());// Los paso a string para compararlos
-			String hora2 = String.valueOf(o2.getDuracionMin());
+			Integer hora1 = o1.getDuracionMin();// Los paso a string para compararlos
+			Integer hora2 = o2.getDuracionMin();
 			return hora1.compareTo(hora2);// Si hora1 mayor que hora dos retorna 1
 		}
 	};
@@ -40,8 +40,8 @@ public class ServicioPelicula {
 
 		@Override
 		public int compare(Pelicula o1, Pelicula o2) {// comparo los dos objetos
-			String hora1 = String.valueOf(o1.getDuracionMin());// Los paso a string para compararlos
-			String hora2 = String.valueOf(o2.getDuracionMin());
+			Integer hora1 = o1.getDuracionMin();// Los paso a string para compararlos
+			Integer hora2 = o2.getDuracionMin();
 			return hora2.compareTo(hora1);// Si hora2 mayor que hora dos retorna 1
 		}
 	};
