@@ -1,9 +1,5 @@
 package UMLAsociacion.BarajaDeCartas;
 
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
-
 public class MenuCartas {
 //	Realizar una baraja de cartas españolas orientada a objetos. Una carta tiene un número
 //	entre 1 y 12 (el 8 y el 9 no los incluimos) y un palo (espadas, bastos, oros y copas). Esta

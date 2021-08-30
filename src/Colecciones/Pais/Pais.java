@@ -1,10 +1,6 @@
 package Colecciones.Pais;
 
-import java.util.Comparator;
-import java.util.Set;
 import java.util.TreeSet;
-
-import javax.swing.text.html.HTMLDocument.Iterator;
 
 public class Pais implements Comparable<Pais> {// Implemento comparable para comparar datos
 	// Atributos

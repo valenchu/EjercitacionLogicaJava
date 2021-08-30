@@ -1,8 +1,6 @@
 package Colecciones.Tienda;
 
-import java.nio.file.spi.FileSystemProvider;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 
 public class Tienda {

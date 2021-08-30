@@ -1,6 +1,5 @@
 package POO;
 
-import java.math.BigInteger;
 import java.util.Scanner;
 
 public class CuentaBancariaEjer5POO {

@@ -1,6 +1,5 @@
 package Colecciones.Tienda;
 
-import java.util.HashMap;
 import java.util.Scanner;
 
 public class MenuTienda {

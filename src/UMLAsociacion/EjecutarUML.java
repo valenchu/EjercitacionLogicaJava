@@ -1,8 +1,6 @@
 package UMLAsociacion;
 
 import UMLAsociacion.BarajaDeCartas.MenuCartas;
-import UMLAsociacion.PerroPersona1.Menu;
-import UMLAsociacion.RuletaRusaAgua.MenuRuso;
 
 public class EjecutarUML {
 

@@ -1,7 +1,6 @@
 package POO;
 
 import java.util.Scanner;
-import java.util.concurrent.ExecutionException;
 
 public class PersonaEjer7POO {
 	// Atributos

@@ -1,6 +1,5 @@
 package Colecciones.PerrorsRazas;
 
-import java.util.ArrayList;
 import java.util.Comparator;
 
 public class Perro {
