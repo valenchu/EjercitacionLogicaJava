@@ -13,12 +13,12 @@ public class Ejecutor {
 //		l1.ejecutor4();
 //		l1.ejecutor5();
 //		l1.ejecutor6();
-//		l1.ejecutor7();
+		l1.ejecutor7();
 //		l1.ejecutor8();
 //		l1.ejecutor9();
 //		l1.ejecutor10();
 //		l1.ejecutor11();
-		l1.ejecutor12();
+//		l1.ejecutor12();
 	}
 
 }

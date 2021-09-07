@@ -233,6 +233,14 @@ public class LlamadoEjercicio {
 		System.out.println("/////////////////");
 		System.out.println("El %" + ma + " de estas 4 personas es MAYOR");
 		System.out.println("El %" + me + " de estas 4 personas es MENOR");
+
+		// Prueba del ejercicio 1 de exepciones
+		PersonaEjer7POO p5 = null;
+		try {
+			p5.esMayorDeEdad();
+		} catch (Exception e) {
+			System.out.println("ACA VEMOS COMO MANDA UN NULL EXEPTIO\nPORQUE ESTA INTANCIADO EN NULL LA PERSONA " + e);
+		}
 	}
 
 	public void ejecutor8() {
