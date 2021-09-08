@@ -12,7 +12,7 @@ import java.util.HashSet;
 public class prueba {
 
 	public static void main(String[] args) {
-		Integer num = -33;
+		Integer num = -123454321;
 		System.out.println("Es capicua el numero = " + num + "? " + numCapicua(num));
 		int inicio = 455, cantCaramelos = 1585, cantPresos = 500;
 		int resultado = prisioneroDulce(inicio, cantCaramelos, cantPresos);
@@ -48,7 +48,7 @@ public class prueba {
 					inverso = (inverso * 10) + (cifra);// Voy dando vuelta el numero 1 a uno para ver si es capicua
 					aux = aux / 10;// Voy dividiendo hasta que queda en cero para dejar de repetir el proceso
 				}
-				if (numero == inverso) {// Verifico si numero es igual a inverso que es el que fui dando vuelta
+				if (numero.equals(inverso)) {// Verifico si numero es igual a inverso que es el que fui dando vuelta
 					// tonces es capicua si no no es capicua
 					verificar = true;
 				} else {
