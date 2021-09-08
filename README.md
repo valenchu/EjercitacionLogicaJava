@@ -5,4 +5,5 @@
 - En este git contiene Ejercicios Asociaciones agregacion y composicion EGG
 - En este git contiene Herencia practica EGG
 - En este git contiene Excepciones try catch finally practica EGG
+- En este git contiene Integrador POO mas funciones realizadas del integrador EGG
 - Practica contiene un pequeño ejemplo de Herencia con dos Operaciones. Probando sobreescrituras de metodos y pasaje de Constructor!
