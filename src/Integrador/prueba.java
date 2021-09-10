@@ -12,25 +12,31 @@ import java.util.HashSet;
 public class prueba {
 
 	public static void main(String[] args) {
-		Integer num = -123454321;
-		System.out.println("Es capicua el numero = " + num + "? " + numCapicua(num));
-		int inicio = 455, cantCaramelos = 1585, cantPresos = 500;
-		int resultado = prisioneroDulce(inicio, cantCaramelos, cantPresos);
-		System.out.println("El prisionero que tuvo el caramelo podrido esta en la posicion = " + resultado);
-		ArrayList<String> listaMedias = new ArrayList<String>();
-		HashSet<String> listaM = new HashSet<String>();
-		listaMedias.add("A");
-		listaMedias.add("B");
-		listaMedias.add("A");
-		listaMedias.add("B");
-		listaMedias.add("C");
-		listaMedias.add("A");
-		listaMedias.add("F");
-		listaMedias.add("Z");
-		listaMedias.add("C");
-		listaMedias.add("H");
-		listaM = mediasAmigas(listaMedias);
-		listaM.forEach(p -> System.out.print(p + ","));
+//		Integer num = -123454321;
+//		System.out.println("Es capicua el numero = " + num + "? " + numCapicua(num));
+//		int inicio = 455, cantCaramelos = 1585, cantPresos = 500;
+//		int resultado = prisioneroDulce(inicio, cantCaramelos, cantPresos);
+//		System.out.println("El prisionero que tuvo el caramelo podrido esta en la posicion = " + resultado);
+//		ArrayList<String> listaMedias = new ArrayList<String>();
+//		HashSet<String> listaM = new HashSet<String>();
+//		listaMedias.add("A");
+//		listaMedias.add("B");
+//		listaMedias.add("A");
+//		listaMedias.add("B");
+//		listaMedias.add("C");
+//		listaMedias.add("A");
+//		listaMedias.add("F");
+//		listaMedias.add("Z");
+//		listaMedias.add("C");
+//		listaMedias.add("H");
+//		listaM = mediasAmigas(listaMedias);
+//		listaM.forEach(p -> System.out.print(p + ","));
+		//Resuelve desp de esto para evaluacion
+		EvaluacionTesteo e = new EvaluacionTesteo();
+//		boolean result = e.parCieloPiso(2, 2, -3);
+//		String result = e.geringoso("hola");
+		String result = e.inversa("raton ");
+		System.out.println(result);
 
 	}
 
