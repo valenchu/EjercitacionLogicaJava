@@ -8,5 +8,8 @@
 - En este git contiene Integrador POO mas funciones realizadas del integrador EGG
 - En este git contiene Ejercitacion MySQL con consultas realizadas a BD en un WORD en Scripts BD
 - En este git agregue ejercitacion con MySQL dentro de IDE
-[Link a MySQL!](https://github.com/valenchu/EjercitacionLogicaJava/tree/main/src/Mysql)
+	- [Link a MySQL!](https://github.com/valenchu/EjercitacionLogicaJava/tree/main/src/Mysql)
+	- [librería Commons DBCP!](https://commons.apache.org/proper/commons-dbcp/download_dbcp.cgi)
+	- [librería Commons Logging!](https://commons.apache.org/proper/commons-logging/download_logging.cgi)
+	- [librería MySQL Connector/J!](https://downloads.mysql.com/archives/c-j/)
 - Practica contiene un pequeño ejemplo de Herencia con dos Operaciones. Probando sobreescrituras de metodos y pasaje de Constructor!
