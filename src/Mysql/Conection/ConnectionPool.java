@@ -31,7 +31,7 @@ public class ConnectionPool {
 	// Object private connection pool
 	private static ConnectionPool dataSource;
 	// Create basic data source this permite creat the pool of connection
-	private static BasicDataSource basicDataSource = null;
+	private BasicDataSource basicDataSource = null;
 
 	public ConnectionPool() {
 		System.out.println("Inserte the name of talbe BD");
@@ -94,9 +94,9 @@ public class ConnectionPool {
 	}
 
 	// Abilite the auto commit in bd
-	public void autoCommit(boolean autoCommit) {
+	public void autoCommit(Connection connection, boolean autoCommit) {
 		try {
-			getInstance().getConnection().setAutoCommit(autoCommit);
+			connection.setAutoCommit(autoCommit);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -104,9 +104,9 @@ public class ConnectionPool {
 	}
 
 	// Send the information of query the DB
-	public void commit() {
+	public void commit(Connection connection) {
 		try {
-			getInstance().getConnection().commit();
+			connection.commit();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -114,9 +114,9 @@ public class ConnectionPool {
 	}
 
 	// Undo the sql query send to DB
-	public static void rollBack() {
+	public void rollBack(Connection connection) {
 		try {
-			getInstance().getConnection().rollback();
+			connection.rollback();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

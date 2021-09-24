@@ -1,7 +1,10 @@
 package Mysql.Store;
 
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.Scanner;
 
+import Mysql.Conection.ConnectionPool;
 import Mysql.Store.Service.ProductoService;
 
 public class StoreEjecutor {
@@ -9,6 +12,13 @@ public class StoreEjecutor {
 	public static void ejecutorStore() {
 		boolean test = false;
 		do {
+			Connection con = ConnectionPool.getInstance().getConnection();
+			try {
+				ConnectionPool.getInstance().closeConnection(con);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			head();
 			Scanner sn = new Scanner(System.in);
 			String data = sn.nextLine();
@@ -28,6 +38,9 @@ public class StoreEjecutor {
 		System.out.println("C = TO LIST THOSE PRODUCT WHAT YOUR PRICE IS BETWEEN 120 AND 202");
 		System.out.println("D = SEARCH AND TO LIST ALL THE LAPTOPS OF THE PRODUCT TABLE");
 		System.out.println("E = LIST TO THE NAME AND THE PRICE OF PRODUCT MORE CHEAP");
+		System.out.println("F = INSERT A PRODUCT IN THE DATA BASE TABLE PRODUCT");
+		System.out.println("G = INSERT A MANUFACTURER IN THE DATA BASE TABLE MANUFACTURER");
+		System.out.println("H = EDIT A PRODUCT WITH DATA TO ELECTION");
 		System.out.println("-----------------------------------------------------------------");
 		System.out.println("EXIT APP = 0");
 	}
@@ -54,6 +67,7 @@ public class StoreEjecutor {
 	// Menu options
 	public static void options(String data) {
 		ProductoService pro = new ProductoService();
+		boolean ver = false;
 		data = data.toLowerCase();
 		switch (data) {
 		case "a":
@@ -72,6 +86,19 @@ public class StoreEjecutor {
 		case "e":
 			pro.listNameAndPriceMoreCheap();// call the list producto name and price more cheap ubicated in the prodcut
 											// service
+			break;
+		case "f":
+			do {
+				ver = pro.insertAProductInDB();// Call to insert product in the service
+			} while (ver != true);
+			break;
+		case "g":
+			pro.insertAManufactureInDB();// call to insert manufacturer in the service
+			break;
+		case "h":
+			do {
+				ver = pro.updateProduct();// call to update product in the service
+			} while (ver != true);
 			break;
 		default:
 			System.out.println("<<<<COMANDO INSERTADO INCORRECTO>>>>");
