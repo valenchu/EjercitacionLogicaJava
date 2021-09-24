@@ -5,7 +5,6 @@ import java.util.Scanner;
 import Mysql.Store.Service.ProductoService;
 
 public class StoreEjecutor {
-	
 
 	public static void ejecutorStore() {
 		boolean test = false;
@@ -16,28 +15,36 @@ public class StoreEjecutor {
 			test = selected(data);
 		} while (test != true);
 	}
-	//Show the menu
+
+	// Show the menu
 	public static void head() {
 		System.out.println("---MENU STORE---");
+		System.out.println("-----------------------------------------------------------------");
 		System.out.println("WHAT DO YOU WISH DO?");
 		System.out.println("SELECT A OPTION PLS. IF YOU WISH EXIT THE APP SELECT 0");
-		System.out.println("A = LIST THE  NAME  OF ALL PRODUCT THERE IS IN THE TABLE PRODUCT");
+		System.out.println("-----------------------------------------------------------------");
+		System.out.println("A = TO LIST THE  NAME  OF ALL PRODUCT THERE IS IN THE PRODUCT TABLE");
+		System.out.println("B = TO LIST THE  NAME AND THE PRICE OF ALL PRODUCT OF THE PRODUCT TABLE");
+		System.out.println("C = TO LIST THOSE PRODUCT WHAT YOUR PRICE IS BETWEEN 120 AND 202");
+		System.out.println("D = SEARCH AND TO LIST ALL THE LAPTOPS OF THE PRODUCT TABLE");
+		System.out.println("E = LIST TO THE NAME AND THE PRICE OF PRODUCT MORE CHEAP");
+		System.out.println("-----------------------------------------------------------------");
 		System.out.println("EXIT APP = 0");
 	}
 
 	// Verific all data
 	public static boolean selected(String data) {
 		boolean verificNumber = false, verificLetter = false;
-		if (isLetter(data)) {//if is a lleter call options 
+		if (isLetter(data)) {// if is a lleter call options
 			System.out.println("is a letter");
-			options(data);//option is te call all the consult solicited in the exercite
+			options(data);// option is te call all the consult solicited in the exercite
 			verificLetter = true;
 		}
-		if (isNumber(data) && data.equals("0")) {//if is a number call exit menu
+		if (isNumber(data) && data.equals("0")) {// if is a number call exit menu
 			System.out.println("is a number");
 			verificNumber = true;
 		}
-		if (!verificLetter && !verificNumber) {//if isn't a number and letter repeat the menu
+		if (!verificLetter && !verificNumber) {// if isn't a number and letter repeat the menu
 			System.out.println("----ERROR DATA, INSERT THE CORRECT VALUE PLS----");
 		}
 		return verificNumber;
@@ -50,10 +57,24 @@ public class StoreEjecutor {
 		data = data.toLowerCase();
 		switch (data) {
 		case "a":
-			pro.listAllProduct();//call the list producto ubicated in the prodcut service
+			pro.listAllNameProduct();// call the list producto name ubicated in the prodcut service
 			break;
-
+		case "b":
+			pro.listAllNameAndPrecieProduct();// call the list producto name and precie ubicated in the prodcut service
+			break;
+		case "c":
+			pro.toListProductBetween();// call the list producto what your precie between 120 and 202 ubicated in the
+										// prodcut service
+			break;
+		case "d":
+			pro.searchLaptopsProduct();// call the list producto name with portatil ubicated in the prodcut service
+			break;
+		case "e":
+			pro.listNameAndPriceMoreCheap();// call the list producto name and price more cheap ubicated in the prodcut
+											// service
+			break;
 		default:
+			System.out.println("<<<<COMANDO INSERTADO INCORRECTO>>>>");
 			break;
 		}
 	}
