@@ -12,4 +12,5 @@
 	- [librería Commons DBCP!](https://commons.apache.org/proper/commons-dbcp/download_dbcp.cgi)
 	- [librería Commons Logging!](https://commons.apache.org/proper/commons-logging/download_logging.cgi)
 	- [librería MySQL Connector/J!](https://downloads.mysql.com/archives/c-j/)
+	- [Ejercicios MYSQL!](https://github.com/valenchu/EjercitacionLogicaJava/blob/main/src/Mysql/Microsoft%20Word%20-%20Guia%20JDBC.docx.pdf)
 - Practica contiene un pequeño ejemplo de Herencia con dos Operaciones. Probando sobreescrituras de metodos y pasaje de Constructor!
