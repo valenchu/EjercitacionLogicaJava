@@ -1,21 +1,10 @@
 package Mysql.Conection;
 
-import java.awt.Window;
-import java.io.Console;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.Scanner;
 
-import javax.swing.JOptionPane;
-import javax.tools.JavaCompiler;
-
 import org.apache.commons.dbcp2.BasicDataSource;
-
-import com.mysql.cj.xdevapi.PreparableStatement;
-
-import Mysql.MainEjecutor;
 
 public class ConnectionPool {
 

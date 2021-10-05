@@ -3,8 +3,6 @@ package Exeption;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import javax.crypto.NullCipher;
-
 public class SentenciasEjer5Y6Y8 {
 //	Dado el método metodoA de la clase A, indique:
 //	A) ¿Qué sentencias y en qué orden se ejecutan si se produce la excepción 

@@ -1,12 +1,7 @@
 package Integrador;
 
-import java.awt.Dimension;
-import java.awt.List;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Date;
 import java.util.HashSet;
 
 public class prueba {

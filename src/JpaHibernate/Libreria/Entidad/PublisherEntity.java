@@ -6,8 +6,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.SQLDelete;
+
 @Entity
 @Table(name = "publisher")
+@SQLDelete(sql = "UPDATE publisher SET top = false WHERE id=?")
 public class PublisherEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)

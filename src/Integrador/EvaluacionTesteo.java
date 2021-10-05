@@ -1,8 +1,5 @@
 package Integrador;
 
-import java.util.Arrays;
-import java.util.Iterator;
-
 public class EvaluacionTesteo {
 
 	public Boolean parCieloPiso(int numEnt, double numReal, long numLargo) {

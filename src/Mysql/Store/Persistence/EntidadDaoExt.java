@@ -5,12 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Collections;
-
-import com.mysql.cj.x.protobuf.MysqlxCrud.Collection;
 
 import Mysql.Conection.ConnectionPool;
-import Mysql.Store.Entity.Producto;
 
 public class EntidadDaoExt {
 

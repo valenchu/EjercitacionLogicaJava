@@ -1,9 +1,5 @@
 package Mysql;
 
-import java.sql.Connection;
-import java.sql.SQLException;
-
-import Mysql.Conection.ConnectionPool;
 import Mysql.Store.StoreEjecutor;
 
 public class MainEjecutor {

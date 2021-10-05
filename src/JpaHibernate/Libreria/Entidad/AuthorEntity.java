@@ -6,8 +6,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.SQLDelete;
+
 @Entity
 @Table(name = "author")
+@SQLDelete(sql = "UPDATE Author SET top = false WHERE id=?")
 public class AuthorEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)

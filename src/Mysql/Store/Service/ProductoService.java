@@ -3,7 +3,6 @@ package Mysql.Store.Service;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import Mysql.Store.Entity.Producto;
 import Mysql.Store.Persistence.EntidadDaoExt;
 
 public class ProductoService {
