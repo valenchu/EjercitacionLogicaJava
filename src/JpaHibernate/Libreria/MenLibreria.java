@@ -25,8 +25,10 @@ public class MenLibreria {
 			pus.callListPublisher();
 			System.out.println("---ALL BOOKS---");
 			bookService.printAllBook();
-			System.out.println("1 create and call author,\n2 create and call publisher,\n3 create a book and call,"
-					+ "\n4 CRUD Author,\n5 CRUD Publisher,\n6 CRUD book,\n0 exit app create call;");
+			System.out.println("1 Create and call author,\n2 Create and call publisher,\n3 Create a book and call,"
+					+ "\n4 CRUD Author,\n5 CRUD Publisher,\n6 CRUD book,\n7 Search author for name,\n8 Search for book ISBN,"
+					+ "\n9 Search book for title,\n10 Search book for name of author,"
+					+ "\n11 Search book for name of publisher,\n0 EXIT app create call;");
 			int number = sn.nextInt();
 			switch (number) {
 			case 1:
@@ -62,31 +64,36 @@ public class MenLibreria {
 				break;
 			case 3:
 				try {
-					sn.nextLine();
 					BookEntity book = null;
 					System.out.println("----CREATE A NEW BOOK----");
 					System.out.println("Insert title of book");
 					String title = sn.nextLine();
 					System.out.println("Insert year of book");
 					Integer year = sn.nextInt();
+					sn.nextLine();
 					System.out.println("Insert models of book");
 					Integer models = sn.nextInt();
+					sn.nextLine();
 					System.out.println("Insert models borrowed of book");
 					Integer modelsBorrowed = sn.nextInt();
+					sn.nextLine();
 					System.out.println("Insert models remaing of book");
 					Integer modelsRemainings = sn.nextInt();
+					sn.nextLine();
 					Boolean top = true;
 					System.out.println("Insert PUBLISHER in the of book");
 					System.out.println("---- LIST PUBLISHER UP ----");
 					pus.callListPublisher();
 					System.out.println("Selected id of publisher for insert the book");
 					Integer idPubl = sn.nextInt();
+					sn.nextLine();
 					PublisherEntity publisher = pus.searchPublisher(idPubl);
 					System.out.println("Insert AUTHOR in the of book");
 					System.out.println("---- LIST AUTHOR UP ----");
 					aus.callListAuthor();
 					System.out.println("Selected id of author for insert the book");
 					Integer idAuth = sn.nextInt();
+					sn.nextLine();
 					AuthorEntity author = aus.searchAuthor(idAuth);
 					book = new BookEntity(title, year, models, modelsBorrowed, modelsRemainings, top, publisher,
 							author);
@@ -100,7 +107,6 @@ public class MenLibreria {
 				try {
 					crudAuthor();
 				} catch (Exception e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 				break;
@@ -108,7 +114,6 @@ public class MenLibreria {
 				try {
 					crudPublisher();
 				} catch (Exception e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 				break;
@@ -116,7 +121,41 @@ public class MenLibreria {
 				try {
 					crudBook();
 				} catch (Exception e) {
-					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				break;
+			case 7:
+				try {
+					aus.searchAuthorForName();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				break;
+			case 8:
+				try {
+					bookService.searchForISBN();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				break;
+			case 9:
+				try {
+					bookService.searchForTitle();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				break;
+			case 10:
+				try {
+					bookService.searchForNameTheAuthor();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				break;
+			case 11:
+				try {
+					bookService.searchForNameThePublisher();
+				} catch (Exception e) {
 					e.printStackTrace();
 				}
 				break;
@@ -142,17 +181,20 @@ public class MenLibreria {
 				System.out.println("---WELCOME CRUD AUTHOR---");
 				System.out.println("Select 1 for UPDATE,\n2 for DELETE,\n0 EXIT crud author;  ");
 				value = sn.nextInt();
+				sn.nextLine();
 				switch (value) {
 				case 1:
 					aus.callListAuthor();
 					System.out.println("Selected ID AUTHOR to update the data");
 					id = sn.nextInt();
+					sn.nextLine();
 					aus.updateAuthor(id);
 					break;
 				case 2:
 					aus.callListAuthor();
 					System.out.println("Selected ID AUTHOR to softDelete the data");
 					id = sn.nextInt();
+					sn.nextLine();
 					aus.deletedAuthor(id);
 					break;
 				case 0:
@@ -184,12 +226,14 @@ public class MenLibreria {
 					pus.callListPublisher();
 					System.out.println("Selected ID PUBLISHER to update the data");
 					id = sn.nextInt();
+					sn.nextLine();
 					pus.updatePublisher(id);
 					break;
 				case 2:
 					pus.callListPublisher();
 					System.out.println("Selected ID PUBLISHER to softDelete the data");
 					id = sn.nextInt();
+					sn.nextLine();
 					pus.deletedPublisher(id);
 					break;
 				case 0:
@@ -208,20 +252,21 @@ public class MenLibreria {
 
 	// Crud book
 	private static void crudBook() throws Exception {
-		Scanner sn = new Scanner(System.in).useDelimiter("\\n");
+		Scanner sn = new Scanner(System.in);
 		int value = -1;// Value for do while
-		int id = -1;// Value for isbn;
+		Long id = -1L;// Value for isbn;
 		try {// Print the error
-			System.out.println("---WELCOME CRUD BOOK---");
-			System.out.println("Select 1 for UPDATE,\n2 for DELETE,\n0 EXIT crud book;  ");
-			value = sn.nextInt();
 			do {// Exit the menu crudBook
-
+				System.out.println("---WELCOME CRUD BOOK---");
+				System.out.println("Select 1 for UPDATE,\n2 for DELETE,\n0 EXIT crud book;  ");
+				value = sn.nextInt();
+				sn.nextLine();
 				switch (value) {
 				case 1:// Update
 					bookService.printAllBook();// Print the book
 					System.out.println("You select the ISBN of BOOK to edit now");
-					id = sn.nextInt();
+					id = sn.nextLong();
+					sn.nextLine();
 					bookService.updateBook(id);
 					break;
 				case 2:// Deleted

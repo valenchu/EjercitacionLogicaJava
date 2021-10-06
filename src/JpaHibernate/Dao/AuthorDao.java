@@ -39,7 +39,8 @@ public class AuthorDao extends Dao {
 
 		}
 	}
-	//Deleted
+
+	// Deleted
 	public void deleted(AuthorEntity authorEntity) {
 		try {
 			em.getTransaction().begin();
@@ -58,8 +59,18 @@ public class AuthorDao extends Dao {
 		}
 	}
 
+	// Search author for name
+	public List<AuthorEntity> searchAuthorForName(String name) {
+		@SuppressWarnings("unchecked")
+		List<AuthorEntity> author = em
+				.createQuery("FROM AuthorEntity WHERE lower(name) LIKE lower(:name) AND top = true")
+				.setParameter("name", name + "%").getResultList();
+		return author;
+	}
+
 	// search and print all author
 	public void printAll() {
+		@SuppressWarnings("unchecked")
 		List<AuthorEntity> author = (List<AuthorEntity>) em.createQuery("FROM AuthorEntity WHERE top = true")
 				.getResultList();
 		System.out.println("The amount of authors there are in BD is : " + author.size());
@@ -68,6 +79,7 @@ public class AuthorDao extends Dao {
 
 	// Search and return list of author for insert in the book
 	public List<AuthorEntity> searchAuthor() {
+		@SuppressWarnings("unchecked")
 		List<AuthorEntity> author = (List<AuthorEntity>) em.createQuery("FROM AuthorEntity WHERE top = true")
 				.getResultList();
 		System.out.println("The amount of publisher there are in BD is : " + author.size());
