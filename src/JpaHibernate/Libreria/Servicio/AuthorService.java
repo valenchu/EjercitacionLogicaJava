@@ -50,6 +50,7 @@ public class AuthorService {
 		try {
 			if (!(id <= 0)) {
 				AuthorEntity au = searchAuthor(id);
+				System.out.println("----WELCOME TO MODIFY SECTION----");
 				System.out.println("Modify name the author");
 				System.out.println("ACTUAL NAME = " + au.getName());
 				String name = sn.nextLine();

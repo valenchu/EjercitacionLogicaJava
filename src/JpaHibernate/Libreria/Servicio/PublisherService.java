@@ -50,6 +50,7 @@ public class PublisherService {
 		try {
 			if (!(id <= 0)) {
 				PublisherEntity publi = searchPublisher(id);
+				System.out.println("----WELCOME TO MODIFY SECTION----");
 				System.out.println("Modify name the publisher");
 				System.out.println("ACTUAL NAME = " + publi.getName());
 				String name = sn.nextLine();

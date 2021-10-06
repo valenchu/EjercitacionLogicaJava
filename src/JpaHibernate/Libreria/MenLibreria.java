@@ -112,6 +112,14 @@ public class MenLibreria {
 					e.printStackTrace();
 				}
 				break;
+			case 6:
+				try {
+					crudBook();
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				break;
 			case 0:
 				ver = true;
 				break;
@@ -124,7 +132,8 @@ public class MenLibreria {
 		} while (ver != true);
 	}
 
-	public static void crudAuthor() throws Exception {
+	// Crud Author
+	private static void crudAuthor() throws Exception {
 		Scanner sn = new Scanner(System.in);
 		int value = -1;
 		int id = -1;
@@ -160,7 +169,8 @@ public class MenLibreria {
 		}
 	}
 
-	public static void crudPublisher() throws Exception {
+	// Crud Publisher
+	private static void crudPublisher() throws Exception {
 		Scanner sn = new Scanner(System.in);
 		int value = -1;
 		int id = -1;
@@ -190,6 +200,45 @@ public class MenLibreria {
 					break;
 				}
 			} while (value != 0);
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new Exception(e.getMessage());
+		}
+	}
+
+	// Crud book
+	private static void crudBook() throws Exception {
+		Scanner sn = new Scanner(System.in).useDelimiter("\\n");
+		int value = -1;// Value for do while
+		int id = -1;// Value for isbn;
+		try {// Print the error
+			System.out.println("---WELCOME CRUD BOOK---");
+			System.out.println("Select 1 for UPDATE,\n2 for DELETE,\n0 EXIT crud book;  ");
+			value = sn.nextInt();
+			do {// Exit the menu crudBook
+
+				switch (value) {
+				case 1:// Update
+					bookService.printAllBook();// Print the book
+					System.out.println("You select the ISBN of BOOK to edit now");
+					id = sn.nextInt();
+					bookService.updateBook(id);
+					break;
+				case 2:// Deleted
+					bookService.printAllBook();
+					System.out.println("You select the ISBN of BOOK for deleted");
+					bookService.deletedBook(id);
+					break;
+				case 0:
+					value = 0;// this generated exit the app
+					break;
+				default:
+					System.out.println("Command not find ");
+					break;
+				}
+
+			} while (value != 0);
+
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new Exception(e.getMessage());

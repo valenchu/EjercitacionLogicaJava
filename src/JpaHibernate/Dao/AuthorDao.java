@@ -1,8 +1,9 @@
 package JpaHibernate.Dao;
 
-import java.util.List;
-
 import JpaHibernate.Libreria.Entidad.AuthorEntity;
+import JpaHibernate.Libreria.Entidad.PublisherEntity;
+
+import java.util.List;
 
 public class AuthorDao extends Dao {
 	// Create
@@ -61,7 +62,7 @@ public class AuthorDao extends Dao {
 	public void printAll() {
 		List<AuthorEntity> author = (List<AuthorEntity>) em.createQuery("FROM AuthorEntity WHERE top = true")
 				.getResultList();
-		System.out.println("The cant of authors there are in BD is : " + author.size());
+		System.out.println("The amount of authors there are in BD is : " + author.size());
 		author.forEach(au -> System.out.println(au.toString()));
 	}
 
@@ -69,7 +70,7 @@ public class AuthorDao extends Dao {
 	public List<AuthorEntity> searchAuthor() {
 		List<AuthorEntity> author = (List<AuthorEntity>) em.createQuery("FROM AuthorEntity WHERE top = true")
 				.getResultList();
-		System.out.println("The cant of publisher there are in BD is : " + author.size());
+		System.out.println("The amount of publisher there are in BD is : " + author.size());
 		return author;
 
 	}

@@ -63,7 +63,7 @@ public class PublisherDao extends Dao {
 	public void printAll() {
 		List<PublisherEntity> publisher = (List<PublisherEntity>) em
 				.createQuery("FROM PublisherEntity WHERE top = true").getResultList();
-		System.out.println("The cant of publisher there are in BD is : " + publisher.size());
+		System.out.println("The amount of publisher there are in BD is : " + publisher.size());
 		publisher.forEach(au -> System.out.println(au.toString()));
 	}
 
@@ -71,7 +71,7 @@ public class PublisherDao extends Dao {
 	public List<PublisherEntity> searchPublisher() {
 		List<PublisherEntity> publisher = (List<PublisherEntity>) em
 				.createQuery("FROM PublisherEntity WHERE top = true").getResultList();
-		System.out.println("The cant of publisher there are in BD is : " + publisher.size());
+		System.out.println("The amount of publisher there are in BD is : " + publisher.size());
 		return publisher;
 
 	}
