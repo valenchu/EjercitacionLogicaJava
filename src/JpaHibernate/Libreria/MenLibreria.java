@@ -64,6 +64,7 @@ public class MenLibreria {
 				break;
 			case 3:
 				try {
+					sn.nextLine();
 					BookEntity book = null;
 					System.out.println("----CREATE A NEW BOOK----");
 					System.out.println("Insert title of book");
