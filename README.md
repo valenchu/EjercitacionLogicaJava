@@ -1,4 +1,7 @@
 # EjercitacionLogicaJava
+
+<a href="https://github.com/valenchu/EjercitacionLogicaJava"><button type="button">GoToGitHub</button></a>
+
 - En este git guardo ejercitacion logica del curso de EGG
 - En este git contiene apartado POO de curso EGG
 - En este git contiene colecciones EGG
