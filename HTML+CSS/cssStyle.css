@@ -10,3 +10,12 @@ ol.normal{
 .mylist2{
     text-align:center;
 }
+.aling-body{
+    align-items: center;
+    align-content: center;
+   
+}
+.bodyMod{
+    align-items: left;
+    text-align: left;
+}
