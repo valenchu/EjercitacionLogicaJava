@@ -1,0 +1,12 @@
+.mylist{
+    text-align:center;
+}
+
+ol.normal{
+    list-style-type: square;
+    text-align: left;
+    display: inline-table;
+}
+.mylist2{
+    text-align:center;
+}

@@ -18,4 +18,5 @@
 	- [Ejercicios MYSQL!](https://github.com/valenchu/EjercitacionLogicaJava/blob/main/src/Mysql/Microsoft%20Word%20-%20Guia%20JDBC.docx.pdf)
 - En este git agregue ejercitacion con JPA+Hibernate, mi remove usa @SQLDelete(sql = "UPDATE name_table SET top = false WHERE id=?") para hacer un Soft Deleted, esto esta incluido en librerías Hibernate
 	- [Link a JPA+Hibernate!](https://github.com/valenchu/EjercitacionLogicaJava/tree/main/src/JpaHibernate)
+- En este git contiene HTML+CSS+Boostrap ejercitación.
 - Practica contiene un pequeño ejemplo de Herencia con dos Operaciones. Probando sobreescrituras de metodos y pasaje de Constructor!
