@@ -19,3 +19,20 @@ ol.normal{
     align-items: left;
     text-align: left;
 }
+.control{
+    width: 30%;
+    margin-left: 5%;
+
+}
+.s{
+    margin-left: 5%;
+}
+label {
+    display: block;
+    font: 1rem 'Fira Sans', sans-serif;
+}
+
+input,
+label {
+    margin: .4rem 0;
+}
