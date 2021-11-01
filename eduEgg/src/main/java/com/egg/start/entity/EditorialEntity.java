@@ -24,7 +24,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class EditorialEntity {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private String id_editorial;
 	@NotEmpty
 	private String name;

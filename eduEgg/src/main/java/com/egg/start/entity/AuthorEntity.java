@@ -24,7 +24,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class AuthorEntity {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private String id_author;
 	@NotEmpty
 	private String name;

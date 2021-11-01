@@ -2,6 +2,7 @@ package com.egg.start.entity;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -29,7 +30,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class BookEntity {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private String id_book;
 	@NotNull
 	@NotEmpty
@@ -49,11 +49,11 @@ public class BookEntity {
 	@Min(value = 1)
 	@NotEmpty
 	private Integer remainingCopie;
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "author_id", referencedColumnName = "id_author")
+	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinColumn(name = "author_id")
 	private AuthorEntity author;
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "editorial_id", referencedColumnName = "id_editorial")
+	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinColumn(name = "editorial_id")
 	private EditorialEntity editorial;
 	private Boolean deleted = Boolean.FALSE;
 
