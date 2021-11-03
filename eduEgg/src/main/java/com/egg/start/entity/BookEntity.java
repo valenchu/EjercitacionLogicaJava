@@ -32,7 +32,8 @@ import lombok.NoArgsConstructor;
 @Audited
 public class BookEntity {
 	@Id
-	private String id_book;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id_book;
 	@NotNull
 	@NotEmpty
 	@Min(value = 1)

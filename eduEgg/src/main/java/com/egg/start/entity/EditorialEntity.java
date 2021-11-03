@@ -26,7 +26,8 @@ import lombok.NoArgsConstructor;
 @Audited
 public class EditorialEntity {
 	@Id
-	private String id_editorial;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id_editorial;
 	@NotEmpty
 	private String name;
 	private Boolean deleted = Boolean.FALSE;
