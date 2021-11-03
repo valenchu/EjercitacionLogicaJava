@@ -23,4 +23,27 @@
 - En este git contiene SpringBoot ejercitación.
 	- [Link a SpringBoot book Exercise!](https://github.com/valenchu/EjercitacionLogicaJava/tree/main/eduEgg)
 	- [Link a Ejercitacion!](https://github.com/valenchu/EjercitacionLogicaJava/blob/main/eduEgg/src/main/resources/9-%20Programaci%C3%B3n%20Web.pdf)
+	- Dependencias agregadas de momento al proyecto eduEgg
+```html
+		<!-- https://mvnrepository.com/artifact/org.modelmapper/modelmapper -->
+		<dependency>
+    			<groupId>org.modelmapper</groupId>
+    			<artifactId>modelmapper</artifactId>
+   		 	<version>2.4.2</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-envers -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-envers</artifactId>
+			<version>5.6.0.Final</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>5.6.0.Final</version>
+		</dependency>
+```
 - Practica contiene un pequeño ejemplo de Herencia con dos Operaciones. Probando sobreescrituras de metodos y pasaje de Constructor!
