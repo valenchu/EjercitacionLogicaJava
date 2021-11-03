@@ -15,6 +15,7 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
+import org.hibernate.envers.Audited;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,12 +23,13 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "book")
-@Data
 @SQLDelete(sql = "UPDATE `book` b SET deleted = true WHERE id_book = ?") // This is created for the soff deleted in the
-																			// BD
+																			// // // BD
 @Where(clause = "deleted = false")
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Audited
 public class BookEntity {
 	@Id
 	private String id_book;
