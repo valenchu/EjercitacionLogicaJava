@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.egg.start.dto.BookDto;
 import com.egg.start.entity.BookEntity;
 import com.egg.start.mapper.BookMapper;
 import com.egg.start.repository.BookRepository;
