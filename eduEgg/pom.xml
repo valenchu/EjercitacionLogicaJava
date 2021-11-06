@@ -79,7 +79,6 @@
 			<version>5.6.0.Final</version>
 		</dependency>
 
-
 	</dependencies>
 
 	<build>

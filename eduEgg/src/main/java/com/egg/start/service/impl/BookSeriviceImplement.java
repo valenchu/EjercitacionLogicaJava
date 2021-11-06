@@ -29,8 +29,7 @@ public class BookSeriviceImplement implements BookService, BaseService<BookEntit
 	@Transactional
 	public List<BookEntity> findAll() throws Exception {
 		try {
-			List<BookEntity> book = this.bookRepo.findAll();
-			return book;
+			return this.bookRepo.findAll();
 
 		} catch (Exception e) {
 			throw new Exception(e.getMessage());
@@ -41,7 +40,7 @@ public class BookSeriviceImplement implements BookService, BaseService<BookEntit
 	@Transactional
 	public BookEntity findById(Long id) throws Exception {
 		try {
-			Optional<BookEntity> entityOptional = bookRepo.findById(id.toString());
+			Optional<BookEntity> entityOptional = bookRepo.findById(id);
 			return entityOptional.get();
 		} catch (Exception e) {
 			throw new Exception(e.getMessage());
@@ -74,9 +73,9 @@ public class BookSeriviceImplement implements BookService, BaseService<BookEntit
 	@Transactional
 	public BookEntity update(Long id, BookEntity entity) throws Exception {
 		try {
-			Optional<BookEntity> book = bookRepo.findById(id.toString());
+			Optional<BookEntity> book = bookRepo.findById(id);
 			BookEntity books = book.get();
-			books = bookRepo.save(books);
+			books = bookRepo.save(entity);
 			return books;
 		} catch (Exception e) {
 			throw new Exception(e.getMessage());
@@ -88,10 +87,10 @@ public class BookSeriviceImplement implements BookService, BaseService<BookEntit
 	@Transactional
 	public boolean delete(Long id) throws Exception {
 		try {
-			if (bookRepo.existsById(id.toString())) {
-				bookRepo.deleteById(id.toString());
+			if (bookRepo.existsById(id)) {
+				bookRepo.deleteById(id);
 				return true;
-			}else {
+			} else {
 				throw new Exception();
 			}
 		} catch (Exception e) {

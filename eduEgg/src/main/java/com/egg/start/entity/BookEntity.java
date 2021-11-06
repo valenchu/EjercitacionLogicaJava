@@ -17,6 +17,8 @@ import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
 import org.hibernate.envers.Audited;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -30,27 +32,28 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Audited
+@JsonIgnoreProperties(value = { "handler", "hibernateLazyInitializer", "FieldHandler" })
 public class BookEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id_book;
 	@NotNull
-	@NotEmpty
 	@Min(value = 1)
 	private Long isbn;
 	@NotEmpty
+	@NotNull
 	private String title;
 	@Min(value = 1)
-	@NotEmpty
+	@NotNull
 	private Integer year;
 	@Min(value = 1)
-	@NotEmpty
+	@NotNull
 	private Integer copie;
 	@Min(value = 1)
-	@NotEmpty
+	@NotNull
 	private Integer provaideCopie;
 	@Min(value = 1)
-	@NotEmpty
+	@NotNull
 	private Integer remainingCopie;
 	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "author_id")

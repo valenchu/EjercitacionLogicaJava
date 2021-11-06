@@ -32,7 +32,7 @@ public class BookController {
 	/*
 	 * Method that get all book in BD
 	 */
-	@GetMapping
+	@GetMapping("")
 	public ResponseEntity<?> getAll() {
 		try {
 			// Return all book in BD with bookService.findAll
