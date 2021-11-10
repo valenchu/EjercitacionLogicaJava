@@ -1,5 +1,7 @@
 package com.egg.start.service;
 
-public interface EditorialService {
+import com.egg.start.entity.EditorialEntity;
+
+public interface EditorialService extends BaseService<EditorialEntity, Long> {
 
 }

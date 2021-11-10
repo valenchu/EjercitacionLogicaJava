@@ -1,5 +1,7 @@
 package com.egg.start.service;
 
-public interface AuthorService {
+import com.egg.start.entity.AuthorEntity;
+
+public interface AuthorService extends BaseService<AuthorEntity, Long>{
 
 }

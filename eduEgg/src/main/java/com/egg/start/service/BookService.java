@@ -1,5 +1,7 @@
 package com.egg.start.service;
 
-public interface BookService {
+import com.egg.start.entity.BookEntity;
+
+public interface BookService extends BaseService<BookEntity, Long> {
 
 }

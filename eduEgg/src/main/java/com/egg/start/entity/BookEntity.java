@@ -3,9 +3,6 @@ package com.egg.start.entity;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -25,18 +22,16 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "book")
-@SQLDelete(sql = "UPDATE `book` b SET deleted = true WHERE id_book = ?") // This is created for the soff deleted in the
-																			// // // BD
+@SQLDelete(sql = "UPDATE `book` b SET deleted = true WHERE id = ?") // This is created for the soff deleted in the
+																	// // // BD
 @Where(clause = "deleted = false")
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Audited
 @JsonIgnoreProperties(value = { "handler", "hibernateLazyInitializer", "FieldHandler" })
-public class BookEntity {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id_book;
+public class BookEntity extends BaseEntityPersona {
+
 	@NotNull
 	@Min(value = 1)
 	private Long isbn;
@@ -57,10 +52,10 @@ public class BookEntity {
 	private Integer remainingCopie;
 	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "author_id")
-	private AuthorEntity author;
+	private AuthorEntity author = new AuthorEntity();
 	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "editorial_id")
-	private EditorialEntity editorial;
+	private EditorialEntity editorial = new EditorialEntity();
 	private Boolean deleted = Boolean.FALSE;
 
 }
