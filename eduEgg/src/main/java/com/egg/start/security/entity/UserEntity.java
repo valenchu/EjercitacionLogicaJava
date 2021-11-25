@@ -1,5 +1,6 @@
 package com.egg.start.security.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -35,13 +36,17 @@ public class UserEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	@NotNull
-	@NotEmpty
+	private String name;
+	@NotNull
+	@Column(name = "last_name")
+	private String lastName;
+	@NotNull
 	private String username;
 	@NotNull
-	@NotEmpty
 	private String password;
 	@Enumerated(EnumType.STRING)
 	private RolUser rol;
+	@JsonIgnoreProperties
 	private Boolean deleted = Boolean.FALSE;
 
 }
